@@ -3,6 +3,7 @@ BUILD_NAME=test
 OS=LINUX
 
 CC=
+LIB=
 
 PATH_SRC=./src/
 PATH_OBJ=./obj/
@@ -13,7 +14,7 @@ SRC=main.c
 OBJ=main.o
 
 ifeq ($(OS),LINUX)
-	LIB+=libraylib.so
+	FLAGS+=-lraylib
 	CC:=x86_64-linux-gnu-gcc
 endif
 
@@ -29,6 +30,7 @@ CFLAGS+=
 SRC:= $(addprefix $(PATH_SRC),$(SRC) )
 OBJ:= $(addprefix $(PATH_OBJ),$(OBJ) )
 LIB:= $(addprefix $(PATH_LIB),$(LIB) )
+LLIB:= $(addprefix $(PATH_LIB),$(LLIB) )
 BUILD_NAME:= $(addprefix $(PATH_BIN),$(BUILD_NAME) )
 
 
